@@ -19,6 +19,7 @@ ls = menampilkan daftar file dan direktori
 rm = del file 
 rm -rv = del direktori
 mv = move file ke folder lain  
+FLUSH PRIVILEGES = memuat ulang tabel database
 
 INSTALASI PROXMOX ------------------------------------------------------------------------
 PERTAMA Ganti IP proxmox  : nano /etc/network/interfaces
