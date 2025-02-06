@@ -9,6 +9,6 @@
 -------------------------------------
 define( 'DB_NAME', 'wordpress_db' );
 define( 'DB_USER', 'wp_user' );
-define( 'DB_PASSWORD', 'ukk-DZAKI' );
+define( 'DB_PASSWORD', 'ukk-dzaki' );
 -------------------------------------
 # chown -R www-data:www-data /var/www/html/wordpress/
