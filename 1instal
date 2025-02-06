@@ -1,0 +1,30 @@
+# apt update -y
+-
+# apt install bind9 resolvconf dnsutils -y
+-
+# apt install php8.3-cli php8.3-fpm php8.3-mysql php8.3-opcache php8.3-mbstring php8.3-xml php8.3-gd php8.3-curl -y
+-
+# apt install mariadb-server mariadb-client -y
+-
+# apt install nginx -y
+-
+(setting netplan)
+# nano /etc/netplan/50-cloud-init.yaml
+-----------------------------------
+network:
+    ethernets:
+        ens18:
+            dhcp4: false
+            addresses:
+              - 10.10.10.62/24
+            routes:
+              - to:  default
+                via:  10.10.10.254
+            nameservers:
+              addresses:
+                - 1.1.1.1
+                - 8.8.8.8
+    version: 2
+-----------------------------------
+# netplan try
+# netplan apply
