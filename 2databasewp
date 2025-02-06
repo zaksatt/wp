@@ -2,7 +2,7 @@ mysql -u root
 -
 CREATE DATABASE wordpress_db;
 -
-GRANT ALL ON wordpress_db.(DB_NAME NYA)* TO 'wp_user(DB_USER NYA)'@'localhost' IDENTIFIED BY 'ukk-dzaki(DB_PW NYA)' WITH GRANT OPTION;
+GRANT ALL ON wordpress_db.(DB_NAME NYA)* TO 'wp_user(DB_USER NYA)'@'localhost' IDENTIFIED BY 'ukk-DZAKI(DB_PW NYA)' WITH GRANT OPTION;
 -
 FLUSH PRIVILEGES;
 EXIT
