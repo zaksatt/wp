@@ -53,7 +53,7 @@ nanti yang ini kasi di paling bawah (yang lama dihapus)
 nameserver 10.10.10.62
 search ukk-dzaki.net
 ------------------------
-# nslookup | (nanti muncul ini = 10.10.10.62 + ukk-dzaki.net + www.ukk-dzaki.net)
+# nslookup ukk-dzaki.net | (nanti muncul ini = 10.10.10.62 + ukk-dzaki.net + www.ukk-dzaki.net)
 (jangan lupa setting dns di windows)
 //lakukan ping di cmd 
 //10.10.10.62 + ukk-dzaki.net + www.ukk-dzaki.net
