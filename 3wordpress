@@ -1,0 +1,14 @@
+# wget https://wordpress.org/latest.tar.gz
+-
+# tar xf latest.tar.gz
+-
+# mv wordpress/ /var/www/html/
+-
+# cp -R /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php
+# nano /var/www/html/wordpress/wp-config.php
+-------------------------------------
+define( 'DB_NAME', 'wordpress_db' );
+define( 'DB_USER', 'wp_user' );
+define( 'DB_PASSWORD', 'ukk-DZAKI' );
+-------------------------------------
+# chown -R www-data:www-data /var/www/html/wordpress/
