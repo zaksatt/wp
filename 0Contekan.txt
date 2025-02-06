@@ -19,6 +19,7 @@ ls = menampilkan daftar file dan direktori
 rm = del file 
 rm -rv = del direktori
 mv = move file ke folder lain  
+cp = buat copy file
 FLUSH PRIVILEGES = memuat ulang tabel database
 
 INSTALASI PROXMOX ------------------------------------------------------------------------
