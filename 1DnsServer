@@ -1,0 +1,59 @@
+# cp -R /etc/bind/db.local /etc/bind/ukk-dzaki.net
+# cp -R /etc/bind/db.127 /etc/bind/ukk-dzaki.net.reverse
+-
+# nano /etc/bind/ukk-dzaki.net
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     ukk-dzaki.net. root.ukk-dzaki.net. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      ukk-dzaki.net.
+@       IN      A       10.10.10.62
+www.ukk-dzaki.net.     IN      CNAME   ukk-dzaki.net.
+---------------------------------------------------------------
+# nano /etc/bind/ukk-dzaki.net.reverse
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     ukk-dzaki.net. root.ukk-dzaki.net. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@      IN      NS      ukk-dzaki.net.
+62     IN      PTR     ukk-dzaki.net.
+62     IN      PTR     www.ukk-dzaki.net.
+---------------------------------------------------------------
+# nano /etc/bind/named.conf.local
+// Forward Zone
+zone "ukk-dzaki.net" {
+        type master;
+        file "/etc/bind/ukk-dzaki.net";
+};
+
+// Reverse Zone
+zone "10.10.10.in-addr.arpa" {
+        type master;
+        file "/etc/bind/ukk-dzaki.net.reverse";
+};
+
+# systemctl restart named.service
+# nano /etc/resolv.conf
+nanti yang ini kasi di paling bawah (yang lama dihapus)
+------------------------
+nameserver 10.10.10.62
+search ukk-dzaki.net
+------------------------
+# nslookup | (nanti muncul ini = 10.10.10.62 + ukk-dzaki.net + www.ukk-dzaki.net)
+(jangan lupa setting dns di windows)
+//lakukan ping di cmd 
+//10.10.10.62 + ukk-dzaki.net + www.ukk-dzaki.net
