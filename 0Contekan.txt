@@ -11,6 +11,15 @@ Cara pindah file di ubuntu -----------------------------------------------------
 - ls nya di /home/dzaki/wp (di ls mau mindahin apa) misal di dalem ada folder ukk sama dz,, trs mau pindah yang dz
 - mv dz/ /home/dzaki/ (nanti file pindah di dzaki dan tidak lagi di wp)
 
+Pengertian" dari perintah" ini -----------------------------------------------------------
+
+nano = editor teks dalam file
+cd = perintah untuk mengubah difolder kita berada
+ls = menampilkan daftar file dan direktori
+rm = del file 
+rm -rv = del direktori
+mv = move file ke folder lain  
+
 INSTALASI PROXMOX ------------------------------------------------------------------------
 PERTAMA Ganti IP proxmox  : nano /etc/network/interfaces
   	systemctl restart networking.service (SV IP)
