@@ -38,3 +38,5 @@ Tambahan ketika eror -------------------------------------
 # ls (hapus yang default)
 # rm -rv default
 # systemctl restart nginx 
+JANGAN LUPA HAPUS HISTORY --------------------------------
+history -c
