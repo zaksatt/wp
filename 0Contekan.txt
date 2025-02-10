@@ -27,7 +27,7 @@ PERTAMA Ganti IP proxmox  : nano /etc/network/interfaces
   	systemctl restart networking.service (SV IP)
 
 - nano /etc/network/interfaces
-(Dalamnya di isi ini)
+(Dalamnya di isi ini) -------------
 auto lo
 iface lo inet loopback
 
@@ -44,7 +44,7 @@ iface vmbr0 inet static
 
 source /etc/network/interfaces.d/*
 
--
+-------------------------------------
 
 INSTALASI WP ----------------------------------------------------------------------------
 Public Ip proxmox   : 103.210.35.189:8006
