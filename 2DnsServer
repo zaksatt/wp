@@ -6,36 +6,37 @@
 ; BIND data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     ukk-dzaki.net. root.ukk-dzaki.net. (
+@       IN      SOA     ukk-05dzaki.net. root.ukk-05dzaki.net. (
                               2         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@       IN      NS      ukk-dzaki.net.
-@       IN      A       10.10.10.62
-www.ukk-dzaki.net.     IN      CNAME   ukk-dzaki.net.
+@       IN      NS      ukk-05dzaki.net.
+@       IN      A       10.10.10.25
+www.ukk-05dzaki.net.     IN      CNAME   ukk-05dzaki.net.
 ---------------------------------------------------------------
 # nano /etc/bind/ukk-dzaki.net.reverse
 ;
 ; BIND reverse data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     ukk-dzaki.net. root.ukk-dzaki.net. (
+@       IN      SOA     ukk-05dzaki.net. root.ukk-05dzaki.net. (
                               1         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@      IN      NS      ukk-dzaki.net.
-62     IN      PTR     ukk-dzaki.net.
-62     IN      PTR     www.ukk-dzaki.net.
+@      IN      NS      ukk-05dzaki.net.
+25     IN      PTR     ukk-05dzaki.net.
+25     IN      PTR     www.ukk-05dzaki.net.
+15     IN      PTR     ukk-dzaki.net. (untk prxmk)
 ---------------------------------------------------------------
 # nano /etc/bind/named.conf.local
 // Forward Zone
-zone "ukk-dzaki.net" {
+zone "ukk-05dzaki.net" {
         type master;
         file "/etc/bind/ukk-dzaki.net";
 };
@@ -46,14 +47,19 @@ zone "10.10.10.in-addr.arpa" {
         file "/etc/bind/ukk-dzaki.net.reverse";
 };
 
+// Forward Zone Prox
+zone "ukk-dzaki.net" {
+        type master;
+        file "/etc/bind/ukk-dzaki.net";
+};
 # systemctl restart named.service
 # nano /etc/resolv.conf
 nanti yang ini kasi di paling bawah (yang lama dihapus)
 ------------------------
 nameserver 10.10.10.62
-search ukk-dzaki.net
+search ukk-05dzaki.net
 ------------------------
 # nslookup ukk-dzaki.net | (nanti muncul ini = 10.10.10.62 + ukk-dzaki.net + www.ukk-dzaki.net)
 (jangan lupa setting dns di windows)
 //lakukan ping di cmd 
-//10.10.10.62 + ukk-dzaki.net + www.ukk-dzaki.net
+//10.10.10.25 + ukk-dzaki.net + www.ukk-dzaki.net
