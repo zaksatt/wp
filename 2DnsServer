@@ -15,8 +15,8 @@ $TTL    604800
 ;
 @       IN      NS      ukk-05dzaki.net.
 @       IN      A       10.10.10.25
-www.ukk-05dzaki.net.     IN      CNAME   ukk-05dzaki.net.
-ukk-dzaki.net.     IN      A       10.10.10.15
+www.ukk-05dzaki.net.      IN      CNAME    ukk-05dzaki.net.
+ukk-dzaki.net.      IN      A      10.10.10.15
 ---------------------------------------------------------------
 # nano /etc/bind/ukk-dzaki.net.reverse
 ;
@@ -36,7 +36,7 @@ $TTL    604800
 15     IN      PTR     ukk-dzaki.net.
 ---------------------------------------------------------------
 # nano /etc/bind/named.conf.local
-// Forward Zone
+// Forward Zone Wp
 zone "ukk-05dzaki.net" {
         type master;
         file "/etc/bind/ukk-dzaki.net";
