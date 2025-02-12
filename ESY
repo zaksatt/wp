@@ -2,7 +2,7 @@ ESY ----------------------------------------------------------------------------
 1. Bagaimana tindakan preventif yg anda lakukan untk melindungi dari kerusakan jika sering mati listrik secara mendadak dan tegangan listrik naik turun
  - Melakukan pemasangan UPS (cybrpwr) untuk melindungi dari listrik mati secara tbtb dan berfugsi sebagai menetralkan tegangan yang sering naik turun
 2. Sebutkan Hardware Pokok penyusun Server 
- - papan tempat kompon (Motherboard), otak (CPU), Penyimpanan (SSD), (UPS)
+ - papan tempat kompon (Motherboard), otak (CPU), Penyimpanan (SSD), listrik cadangan (UPS), cooler, Listrik (PSU)
 3. Bagaimana langkah-langkah mengetahui versi sistem operasi jaringan yang kita gunakan? 
  - Wind = Win+R - dxdiag
  - Linux = cat /etc/os-release
@@ -17,7 +17,7 @@ ESY ----------------------------------------------------------------------------
 8. Lakukan perawatan server 
  - Dengan memperbarui sistem operasi, melakukan backup data, menjaga keamanan dan mengecek kesehatan server.
 9. Untuk merestore VM di Proxmox?? 
- - Masuk Proxmox, pilih node VM yang ingin di-restore, lalu klik file backup yang diinginkan. Setelah itu, pilih opsi “Restore”, atur konfigurasi target storage dan VM ID jika perlu, konfirmasi proses restore, dan tunggu hingga selesai.
+ - Masuk Proxmox, pilih node, buka tab Backup, klik file backup, Setelah itu, pilih “Restore”, atur konfigurasi jika perlu, konfirmasi proses restore, dan tunggu hingga selesai dan cek apakah VM berjalan normal.
 10. Untuk membackup VM di Proxmox??
- - Masuk Proxmox, pilih VM yang ingin di-backup, lalu masuk ke tab “Backup”. Klik “Backup Now”, pilih storage tujuan, tentukan mode backup (Snapshot atau Stop), lalu klik “Start” dan tunggu hingga proses backup selesai.
+ - Masuk Proxmox, pencet VM, lalu masuk ke tab “Backup”. Klik “Backup Now”, pilih storage tujuan & tentukan mode backup (Snapshot atau Stop), lalu pencet “Start” dan tunggu hingga proses backup selesai.
 ESY ------------------------------------------------------------------------------------------------------------------------------------------------------------
