@@ -1,3 +1,4 @@
+2DnsServer-----------------------------------------------------------------------------------------------------------------------
 # cp -R /etc/bind/db.local /etc/bind/ukk-dzaki.net
 # cp -R /etc/bind/db.127 /etc/bind/ukk-dzaki.net.reverse
 -
@@ -64,3 +65,5 @@ search ukk-05dzaki.net
 (jangan lupa setting dns di windows)
 //lakukan ping di cmd 
 //10.10.10.25 + ukk-dzaki.net + www.ukk-dzaki.net
+
+2DnsServer-----------------------------------------------------------------------------------------------------------------------
