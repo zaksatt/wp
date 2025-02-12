@@ -16,7 +16,7 @@ $TTL    604800
 @       IN      NS      ukk-05dzaki.net.
 @       IN      A       10.10.10.25
 www.ukk-05dzaki.net.     IN      CNAME   ukk-05dzaki.net.
-proxmox.dzaki.net.       IN      A       10.10.10.25
+ukk-dzaki.net.     IN      A       10.10.10.15
 ---------------------------------------------------------------
 # nano /etc/bind/ukk-dzaki.net.reverse
 ;
@@ -57,10 +57,10 @@ zone "ukk-dzaki.net" {
 # nano /etc/resolv.conf
 nanti yang ini kasi di paling bawah (yang lama dihapus)
 ------------------------
-nameserver 10.10.10.62
+nameserver 10.10.10.25
 search ukk-05dzaki.net
 ------------------------
-# nslookup ukk-dzaki.net | (nanti muncul ini = 10.10.10.62 + ukk-dzaki.net + www.ukk-dzaki.net)
+# nslookup ukk-dzaki.net | (nanti muncul ini = 10.10.10.25 + ukk-dzaki.net + www.ukk-dzaki.net)
 (jangan lupa setting dns di windows)
 //lakukan ping di cmd 
 //10.10.10.25 + ukk-dzaki.net + www.ukk-dzaki.net
