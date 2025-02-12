@@ -1,3 +1,4 @@
+3databasewp-----------------------------------------------------------------------------------------------------------------------
 mysql -u root
 -
 CREATE DATABASE wordpress_db;
@@ -6,3 +7,4 @@ GRANT ALL ON wordpress_db.(DB_NAME NYA)* TO 'wp_user(DB_USER NYA)'@'localhost' I
 -
 FLUSH PRIVILEGES;
 EXIT
+3databasewp-----------------------------------------------------------------------------------------------------------------------
