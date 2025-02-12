@@ -26,7 +26,7 @@ server {
 # systemctl reload nginx.service
 Tambahan ketika eror -------------------------------------
 # cd /etc/nginx/sites-enabled/
-# ls (hapus yang default)
+# ls (HAPUS YANG DEFAULT)
 # rm -rv default
 # systemctl restart nginx 
 JANGAN LUPA HAPUS HISTORY --------------------------------
