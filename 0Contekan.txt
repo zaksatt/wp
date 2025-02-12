@@ -1,7 +1,7 @@
 UKK PROXMAX
 
-Contekan ---------------------------------------------------------------------------------
-remot contekan
+Remot Contekan ---------------------------------------------------------------------------------
+
 - git clone https://github.com/kohanss/wp.git
 - cd /wp
 - cat (tab)	
@@ -21,7 +21,7 @@ iface ens18 inet manual
 
 auto vmbr0
 iface vmbr0 inet static
-        address 10.10.10.1**/24
+        address 10.10.10.1*/24
         gateway 10.10.10.254
         bridge-ports ens18
         bridge-stp off
@@ -32,35 +32,9 @@ source /etc/network/interfaces.d/*
 
 # systemctl restart networking.service (SV IP)
 
--------------------------------------
-
 INSTALASI WP ----------------------------------------------------------------------------
 
 FILE prox/wp        : \\10.1.11.201\MyData\hacker NT\ISO  
-
-Command WP ------------------------------------------------------------------------------
-# sudo su
-- Static ip WP  :   
-# nano /etc/netplan/50-cloud-init.yaml 
-network:
-    ethernets:
-        ens18:
-            dhcp4: false
-            addresses: [10.10.10.1**/24]
-            routes:
-              -  to: default
-                 via: 10.10.10.254
-            nameservers:
-              addresses: [10.10.10.254]
-    version: 2
-
-# netplan apply (SV IP)
-
-; Letak domain atau record
-@       IN      A       10.10.10.110
-www.ukk-randi.net.      IN      CNAME   ukk-randi.net.
-
-
 
 Problm-----------------------------------------------------------------------------------
 + jika systemctl restart named.service tidak bisa maka cek 
@@ -71,8 +45,8 @@ Problm--------------------------------------------------------------------------
   -nano /etc/bind/named.conf.
   -nano /etc/bind/named.conf.local
 
-+ jika tidak muncul ip dan masih 127
- -nano /etc/netplan/50-cloud-init.yaml
++ jika tidak muncul ip dan masih 127 (DHCP) maka:
+ #nano /etc/netplan/50-cloud-init.yaml
  -network:
     ethernets:
         ens18:
@@ -90,4 +64,25 @@ Remot use cmd ------------------------------------------------------------------
 
 - ssh dzaki@10.10.10.** (cmd)
 
-Remot use cmd ---------------------------------------------------------------------------
+Yang ada di Daftar Pertanyaan Tertulis essai --------------------------------------------
+1. Bagaimana tindakan preventif yg anda lakukan untk melindungi dari kerusakan jika sering mati listrik secara mendadak dan tegangan listrik naik turun??
+ - Melakukan pemasangan UPS (cybrpwr) untuk melindungi dari listrik mati secara tbtb dan berfugsi sebagai menetralkan tegangan yang sering naik turun
+2. Sebutkan Hardware Pokok penyusun Server??
+ - papan tempat kompon (Motherboard), otak (CPU), Penyimpanan (SSD), (UPS)
+3. Bagaimana langkah-langkah mengetahui versi sistem operasi jaringan yang kita gunakan?? 
+ - Wind = Win+R - dxdiag
+ - Linux = cat /etc/os-release
+4. Saat mengetahui kipas headsink proses tdk berptr (kondisi on), kita harus segera memperbaikinya??
+ - ya, seblm di perbaiki kita matikan dulu, dan jika tidak di perbaiki akan terjadi overheat dan komputr akan mati secara tiba-tiba
+5. Software apa yang dipergunakan untuk mengakses BIOS server melalui jaringan....??
+ - IPMI (Intelligent Platform Management Interface): mengakses dan mengontrol server melalui jaringan, termasuk BIOS.
+6. Jelaskan apa yang dimaksud dengan sistem operasi open source??
+ - sistem operasi yang tersedia untuk umum dan dapat dimodifikasi secara public
+7. cara install wordpress??
+ - Siapkan basis data - tambahan PHP - konfig Apache - Unduh WordPress - Konfig direktori Wp - Selesaikan instalasi wp
+8.
+ -
+9.
+ -
+10.
+-
