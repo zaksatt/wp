@@ -11,21 +11,7 @@ Cara pindah file di ubuntu -----------------------------------------------------
 - ls nya di /home/dzaki/wp (di ls mau mindahin apa) misal di dalem ada folder ukk sama dz,, trs mau pindah yang dz
 - mv dz/ /home/dzaki/ (nanti file pindah di dzaki dan tidak lagi di wp)
 
-Pengertian" dari perintah" ini -----------------------------------------------------------
-
-nano = editor teks dalam file
-cd = perintah untuk mengubah difolder kita berada
-ls = menampilkan daftar file dan direktori
-rm = del file 
-rm -rv = del direktori
-mv = move file ke folder lain  
-cp = buat copy file
-FLUSH PRIVILEGES = memuat ulang tabel database
-
 INSTALASI PROXMOX ------------------------------------------------------------------------
-PERTAMA Ganti IP proxmox  : nano /etc/network/interfaces
-  	systemctl restart networking.service (SV IP)
-
 - nano /etc/network/interfaces
 (Dalamnya di isi ini) -------------
 auto lo
@@ -44,26 +30,18 @@ iface vmbr0 inet static
 
 source /etc/network/interfaces.d/*
 
+# systemctl restart networking.service (SV IP)
+
 -------------------------------------
 
 INSTALASI WP ----------------------------------------------------------------------------
-Public Ip proxmox   : 103.210.35.189:8006
-local Ip proxmox    : 10.10.10.1:8006
-local Ip vm/linux   : 10.10.10.68
-serv name	    : sijanet              (yang ada di belakang @)
-pick user	    : dzaki		 (yang ada di depan @)
-User proxmox 	    : root
-Pw proxmox 	    : Ukk2025*
-Pw WP		    : ukkdzaki
-FILE prox/wp        : \\10.1.11.201\MyData\hacker NT\ISO
-Kalau Proxmox Linux : User nya pasti default(root) pw nya ngikut
-Kalau WP	    : User dan pw ngikut buatan kita  
+
+FILE prox/wp        : \\10.1.11.201\MyData\hacker NT\ISO  
 
 Command WP ------------------------------------------------------------------------------
-- sudo su
+# sudo su
 - Static ip WP  :   
-- nano /etc/netplan/50-cloud-init.yaml
-dalam nano di isi = 
+# nano /etc/netplan/50-cloud-init.yaml 
 network:
     ethernets:
         ens18:
@@ -76,11 +54,13 @@ network:
               addresses: [10.10.10.254]
     version: 2
 
--netplan apply (SV IP)
+# netplan apply (SV IP)
 
 ; Letak domain atau record
 @       IN      A       10.10.10.110
 www.ukk-randi.net.      IN      CNAME   ukk-randi.net.
+
+
 
 Problm-----------------------------------------------------------------------------------
 + jika systemctl restart named.service tidak bisa maka cek 
