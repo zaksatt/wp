@@ -2,7 +2,7 @@
 ---------------------------------------------------------
 server {
     listen 80;
-    server_name www.ukk-dzaki.net ukk-dzaki.net;
+    server_name www.ukk-05dzaki.net ukk-05dzaki.net;
 
     root /var/www/html/wordpress;
     index index.php index.html index.htm;
