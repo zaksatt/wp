@@ -13,7 +13,7 @@ ESY ----------------------------------------------------------------------------
 6. Jelaskan apa yang dimaksud dengan sistem operasi open source?
  - sistem operasi yang tersedia untuk umum dan dapat dimodifikasi secara public
 7. cara install wordpress 
- - Siapkan basis data - tambahan PHP - konfig Apache - Unduh WordPress - Konfig direktori Wp
+ - Siapkan basis data - tambahan PHP - konfig Apache - Unduh WordPress - Konfig direktori Wp - Selesaikan instalasi melalui antarmuka web
 8. Lakukan perawatan server 
  - Dengan memperbarui sistem operasi, melakukan backup data, menjaga keamanan dan mengecek kesehatan server.
 9. Untuk merestore VM di Proxmox?? 
